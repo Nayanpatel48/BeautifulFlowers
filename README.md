@@ -6,9 +6,7 @@ This is my experimental app which i have made during my initial stage of learnin
 Once you click on any one of them the new screen will appear based on your preference. Then you can read the details about that flower.
 
 Below are the tools, frameworks, Languages used to create this app:
-
-Android Studio, Jetpack compose, Github, Kotlin
-
+![Untitled design](https://github.com/Nayanpatel48/BeautifulFlowers/assets/149961476/f235bbeb-d525-44eb-bdb5-caeb45a870b0)
 Jetpack Compose concepts used in this code:
 
     Composable functions:
