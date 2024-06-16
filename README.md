@@ -41,8 +41,4 @@ Kotlin concepts used in this code:
     Modifiers (companion object): Used to define static members of a class. (e.g., private lists)
 
 This code demonstrates a solid foundation in both Jetpack Compose and Kotlin concepts. It effectively combines UI building, state management, and data handling to create an interactive flower app.
-![Screenshot_2024-06-16-12-54-11-87_ca60800ac21b4add5607c79bbdc0d1ff](https://github.com/Nayanpatel48/BeautifulFlowers/assets/149961476/0e889f75-ec34-436e-933f-47b31b793e3a)
-![Screenshot_2024-06-16-12-54-16-80_ca60800ac21b4add5607c79bbdc0d1ff](https://github.com/Nayanpatel48/BeautifulFlowers/assets/149961476/c9cc9001-449b-4bad-add4-4ac65ccf264a)
-![Screenshot_2024-06-16-12-54-28-03_ca60800ac21b4add5607c79bbdc0d1ff](https://github.com/Nayanpatel48/BeautifulFlowers/assets/149961476/166ef583-b156-4d64-a6d5-5631e3748cd5)
-![Screenshot_2024-06-16-12-54-34-51_ca60800ac21b4add5607c79bbdc0d1ff](https://github.com/Nayanpatel48/BeautifulFlowers/assets/149961476/d1a39beb-4dfb-4f5b-b618-413c49643fbb)
-![Screenshot_2024-06-16-12-54-40-47_ca60800ac21b4add5607c79bbdc0d1ff](https://github.com/Nayanpatel48/BeautifulFlowers/assets/149961476/9a61db22-117d-4fae-9f28-8cbdc41318b8)
+![Untitled design](https://github.com/Nayanpatel48/BeautifulFlowers/assets/149961476/66bf7bf9-3843-4a2e-ac20-bf19ed19262e)
