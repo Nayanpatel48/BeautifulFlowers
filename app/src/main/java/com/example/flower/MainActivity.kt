@@ -1,13 +1,16 @@
 package com.example.flower
 
+import android.content.res.Configuration
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -19,6 +22,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -36,6 +40,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.flower.ui.theme.FlowerTheme
+import com.example.flower.ui.theme.md_theme_dark_background
 import com.example.flower.ui.theme.shapes
 
 class MainActivity : ComponentActivity() {
@@ -44,7 +49,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             FlowerTheme {
-                Manager()
+                Manager(Modifier.background(MaterialTheme.colorScheme.secondary))
             }
         }
     }
@@ -81,12 +86,11 @@ fun FlowerApp(
     onButton4Clicked: () -> Unit,
 ) {
     Column(
-        modifier = modifier
+        modifier = Modifier
             .padding(top = 30.dp)
+            .fillMaxHeight()
     ){
-        Row (
-
-        ){
+        Row {
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally
             ){
@@ -132,9 +136,7 @@ fun FlowerApp(
                 )
             }
         }
-        Row (
-
-        ){
+        Row {
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally
             ){
@@ -382,7 +384,14 @@ private val Aster = listOf(R.drawable.aster)
 private val Bloom = listOf(R.drawable.bloom)
 private val Blossom = listOf(R.drawable.blossom)
 private val Tulip = listOf(R.drawable.tulip)
-@Preview(showBackground = true)
+@Preview(
+    uiMode = Configuration.UI_MODE_NIGHT_YES,
+    name = "DefaultPreviewDark"
+)
+@Preview(
+    uiMode = Configuration.UI_MODE_NIGHT_NO,
+    name = "DefaultPreviewLight"
+)
 @Composable
 fun FlowerAppPreview() {
     FlowerTheme {
