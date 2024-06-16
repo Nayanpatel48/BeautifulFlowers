@@ -12,10 +12,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
@@ -27,20 +25,18 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.flower.ui.theme.FlowerTheme
-import com.example.flower.ui.theme.md_theme_dark_background
 import com.example.flower.ui.theme.shapes
 
 class MainActivity : ComponentActivity() {
@@ -56,24 +52,30 @@ class MainActivity : ComponentActivity() {
 }
 @Composable
 fun Manager(modifier: Modifier = Modifier) {
-    var shouldShowOnboarding by rememberSaveable { mutableStateOf(1) }
+    var shouldShowOnboarding by rememberSaveable { mutableIntStateOf(1) }
 
     Surface(modifier) {
-        if (shouldShowOnboarding == 1) {
-            FlowerApp(
-                onButton1Clicked = { shouldShowOnboarding = 2 },
-                onButton2Clicked = { shouldShowOnboarding = 3 },
-                onButton3Clicked = { shouldShowOnboarding = 4 },
-                onButton4Clicked = { shouldShowOnboarding = 5 }
-            )
-        } else if (shouldShowOnboarding == 2) {
-            AsterDetails(onBackClicked = { shouldShowOnboarding = 1 })
-        } else if (shouldShowOnboarding == 3) {
-            BloomDetails(onBackClicked = { shouldShowOnboarding = 1 })
-        } else if (shouldShowOnboarding == 4) {
-            BlossomDetails(onBackClicked = { shouldShowOnboarding = 1 })
-        } else {
-            TulipDetails(onBackClicked = { shouldShowOnboarding = 1 })
+        when (shouldShowOnboarding) {
+            1 -> {
+                FlowerApp(
+                    onButton1Clicked = { shouldShowOnboarding = 2 },
+                    onButton2Clicked = { shouldShowOnboarding = 3 },
+                    onButton3Clicked = { shouldShowOnboarding = 4 },
+                    onButton4Clicked = { shouldShowOnboarding = 5 }
+                )
+            }
+            2 -> {
+                AsterDetails(onBackClicked = { shouldShowOnboarding = 1 })
+            }
+            3 -> {
+                BloomDetails(onBackClicked = { shouldShowOnboarding = 1 })
+            }
+            4 -> {
+                BlossomDetails(onBackClicked = { shouldShowOnboarding = 1 })
+            }
+            else -> {
+                TulipDetails(onBackClicked = { shouldShowOnboarding = 1 })
+            }
         }
     }
 }
@@ -402,27 +404,27 @@ fun FlowerAppPreview() {
 @Composable
 fun AsterDetailsPreview() {
     FlowerTheme {
-        AsterDetails(modifier = Modifier.fillMaxSize(),{})
+        AsterDetails(modifier = Modifier.fillMaxSize()) {}
     }
 }
 @Preview(showBackground = true)
 @Composable
 fun BloomDetailsPreview() {
     FlowerTheme {
-        BloomDetails(modifier = Modifier.fillMaxSize(),{})
+        BloomDetails(modifier = Modifier.fillMaxSize()) {}
     }
 }
 @Preview(showBackground = true)
 @Composable
 fun BlossomDetailsPreview() {
     FlowerTheme {
-        BlossomDetails(modifier = Modifier.fillMaxSize(),{})
+        BlossomDetails(modifier = Modifier.fillMaxSize()) {}
     }
 }
 @Preview(showBackground = true)
 @Composable
 fun TulipDetailsPreview() {
     FlowerTheme {
-        TulipDetails(modifier = Modifier.fillMaxSize(),{})
+        TulipDetails(modifier = Modifier.fillMaxSize()) {}
     }
 }
